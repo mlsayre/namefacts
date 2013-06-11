@@ -1,6 +1,8 @@
 Namefacts::Application.routes.draw do
   get "main_page/home"
 
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

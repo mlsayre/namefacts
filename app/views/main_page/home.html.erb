@@ -2,14 +2,11 @@
 <p>Random silly, obvious facts about your name!</p>
 
  <%= form_tag("/main_page/home", :method => "get") do %>
-  <%= label_tag(:q, "Enter your name (First Last):") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Get a random fact") %>
-  <% end %>
+  <%= label_tag(:full_name, "Search for:") %>
+  <%= text_field_tag(:full_name) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
-<% whole_name = :q %>
-<%= if :q.empty?
-	"You haven't written your name yet"
-else
-	"Your name is '#{:q}'."
-end %>
+
+<%= 
+	"Your name is '#{params[:full_name]}'." %>

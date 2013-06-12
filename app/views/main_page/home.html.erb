@@ -4,7 +4,7 @@
  <%= form_tag("/main_page/home", :method => "get") do %>
  <p2> Enter your name (First Last:) <br> </p2>
   <%= label_tag(:full_name, "") %>
-  <%= text_field_tag (:full_name), params[:full_name], :maxlength => 30, :size => 31 %>
+  
   <%= submit_tag("Get a random fact") %>
 <% end %>
 

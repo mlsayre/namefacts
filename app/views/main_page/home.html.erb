@@ -1,2 +1,15 @@
-<h1>MainPage#home</h1>
-<p>Find me in app/views/main_page/home.html.erb</p>
+<h1>NameFacts</h1>
+<p>Random silly, obvious facts about your name!</p>
+
+ <%= form_tag("/main_page/home", :method => "get") do %>
+  <%= label_tag(:q, "Enter your name (First Last):") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Get a random fact") %>
+  <% end %>
+
+<% whole_name = :q %>
+<%= if :q.empty?
+	"You haven't written your name yet"
+else
+	"Your name is '#{:q}'."
+end %>

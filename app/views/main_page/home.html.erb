@@ -15,5 +15,31 @@
 elsif params[:full_name] == nil
 	"Your random fact will appear here."
 else
-"Your name backwards is #{params[:full_name].reverse}."
+	name = params[:full_name].split
+	lettercount = name.first.length + name.last.length
+	yvowel = params[:full_name].gsub(/[aeiou]/,'y') 
+	lastrhyme = name.last[1..-1]
+	diceroll = rand(10)
+	if diceroll == 0
+		"Your name backwards is #{name.last.reverse.capitalize} #{name.first.reverse.capitalize}."
+	elsif diceroll == 1
+		"Your name is strong like a #{name.first.capitalize} Bull."
+	elsif diceroll == 2
+		"Your Klingon name is #{name.first.capitalize}ach'Arg #{name.last.capitalize}oloth."
+	elsif diceroll == 3
+		"There are #{lettercount} letters in your name."
+	elsif diceroll == 4
+		"Your initials are #{name.first[0,1]}.#{name.last[0,1]}."
+	elsif diceroll == 5
+		"If 'y' was the world's only vowel, your name becomes #{yvowel}."
+	elsif diceroll == 6
+		"Your Greek name is #{name.first.capitalize}ius #{name.last.capitalize}opus."
+	elsif diceroll == 7
+		"The number of letters in your last name times 654 = #{name.last.length * 654}."
+	elsif diceroll == 8
+		"Your name with scrambled letters could be #{name.first.shuffle.capitalize} #{name.last.shuffle.capitalize}."
+	elsif diceroll == 9
+		"Your last name rhymes with Daba#{lastrhyme}."
+	end
+
  end %>

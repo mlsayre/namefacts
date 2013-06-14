@@ -9,8 +9,8 @@ class String
   end
 
   def scrabble
-  	self.downcase
-  	self.split("").map {|s| s.gsub(/[aeilnorstu]/, '1').gsub(/[dg]/, '2').gsub(/[bcmp]/, 
+  	
+  	self.downcase.split("").map {|s| s.gsub(/[aeilnorstu]/, '1').gsub(/[dg]/, '2').gsub(/[bcmp]/, 
   		'3').gsub(/[fhvwy]/, '4').gsub(/[k]/, '5').gsub(/[jx]/, 
   		'8').gsub(/[qz]/, '10')}.map(&:to_i).reduce(:+)
   

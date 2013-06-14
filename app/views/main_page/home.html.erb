@@ -19,7 +19,7 @@ else
 	lettercount = name.first.length + name.last.length
 	yvowel = params[:full_name].gsub(/[aeiou]/,'y') 
 	lastrhyme = name.last[1..-1]
-	diceroll = rand(10)
+	diceroll = rand(11)
 	if diceroll == 0
 		"Your name backwards is #{name.last.reverse.capitalize} #{name.first.reverse.capitalize}."
 	elsif diceroll == 1
@@ -40,6 +40,8 @@ else
 		"Your name with scrambled letters could be #{name.first.shuffle.capitalize} #{name.last.shuffle.capitalize}."
 	elsif diceroll == 9
 		"Your last name rhymes with Daba#{lastrhyme}."
+	elsif diceroll == 10
+		"In Scrabble, your name is worth #{params[:full_name].scrabble} points."
 	end
 
  end %>

@@ -17,7 +17,7 @@ elsif params[:full_name] == nil
 else
 	name = params[:full_name].split
 	lettercount = name.first.length + name.last.length
-	yvowel = params[:full_name].gsub(/[aeiou]/,'y') 
+	yvowel = params[:full_name].gsub(/[aeiou]/,'y').gsub(/[AEIOU]/,'Y')
 	lastrhyme = name.last[1..-1]
 	diceroll = rand(11)
 	if diceroll == 0
